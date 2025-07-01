@@ -44,8 +44,10 @@ get_user_input() {
     log_info "=== Configuração Inicial ==="
     
     read -p "Domínio do site (ex: meusite.com): " DOMAIN
-    read -p "URL do Supabase (ex: http://localhost:8000): " SUPABASE_URL
+    read -p "URL do Supabase (ex: https://abc.supabase.co): " SUPABASE_URL
     read -p "Chave anônima do Supabase: " SUPABASE_ANON_KEY
+    read -p "Chave de serviço do Supabase (opcional): " SUPABASE_SERVICE_KEY
+    read -p "URL direta do banco PostgreSQL (opcional): " DATABASE_URL
     read -p "Repositório Git (opcional, enter para pular): " GIT_REPO
     read -p "Diretório de instalação [/var/www/japede-cardapio]: " INSTALL_DIR
     
@@ -126,6 +128,8 @@ setup_project() {
 # Supabase Configuration
 NEXT_PUBLIC_SUPABASE_URL=$SUPABASE_URL
 NEXT_PUBLIC_SUPABASE_ANON_KEY=$SUPABASE_ANON_KEY
+SUPABASE_SERVICE_ROLE_KEY=$SUPABASE_SERVICE_KEY
+DATABASE_URL=$DATABASE_URL
 
 # Production Environment
 NODE_ENV=production
@@ -241,6 +245,31 @@ setup_ssl() {
     else
         log_warning "SSL não configurado para localhost"
     fi
+}
+
+# Configurar banco de dados
+setup_database() {
+    log_info "Configurando banco de dados..."
+    
+    # Tornar o script de configuração do banco executável
+    chmod +x "$INSTALL_DIR/setup_database.sh"
+    
+    # Executar configuração do banco
+    cd "$INSTALL_DIR"
+    if [[ -n "$SUPABASE_SERVICE_KEY" ]] || [[ -n "$DATABASE_URL" ]]; then
+        log_info "Inicializando banco de dados com credenciais completas..."
+        if ./setup_database.sh init "$SUPABASE_URL" "$SUPABASE_ANON_KEY" "$SUPABASE_SERVICE_KEY" "$DATABASE_URL"; then
+            log_success "Banco de dados inicializado com sucesso"
+        else
+            log_warning "Falha ao inicializar banco. Verifique as credenciais do Supabase."
+            log_warning "Você pode executar manualmente depois: ./setup_database.sh init"
+        fi
+    else
+        log_warning "Credenciais do banco incompletas. Configuração manual necessária."
+        log_info "Execute depois: ./setup_database.sh init <SUPABASE_URL> <SUPABASE_ANON_KEY> [SERVICE_KEY] [DB_URL]"
+    fi
+    
+    log_success "Configuração do banco concluída"
 }
 
 # Configurar PM2 (opcional)
@@ -359,6 +388,7 @@ main() {
     install_dependencies
     setup_firewall
     setup_project
+    setup_database
     setup_nginx
     setup_ssl
     create_utility_scripts
@@ -390,7 +420,9 @@ main() {
     log_warning "Lembre-se de:"
     log_warning "  1. Configurar DNS para apontar para este servidor"
     log_warning "  2. Verificar se o Supabase está acessível em: $SUPABASE_URL"
-    log_warning "  3. Testar todas as funcionalidades do sistema"
+    log_warning "  3. Configurar permissões RLS no Supabase se necessário"
+    log_warning "  4. Testar todas as funcionalidades do sistema"
+    log_warning "  5. Verificar se o banco foi inicializado: $INSTALL_DIR/setup_database.sh check"
     
     log_success "Instalação finalizada! 🚀"
 }
