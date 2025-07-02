@@ -1,12 +1,12 @@
 
 
 import React, { useState, useMemo, useEffect } from 'react';
-import { useAppContext } from '../contexts/AppContext';
-import { CurrencyDollarIcon, CalendarIcon, DocumentTextIcon, FilterIcon } from '../components/icons'; // Changed DocumentReportIcon to DocumentTextIcon, FilterIconHero to FilterIcon
+import { useAppContext } from '@/contexts/AppContext';
+import { CurrencyDollarIcon, CalendarIcon, DocumentTextIcon, FilterIcon } from '@/components/icons'; // Changed DocumentReportIcon to DocumentTextIcon, FilterIconHero to FilterIcon
 import { Order, OrderStatus, PaymentMethod, CashRegisterSession, CashRegisterSessionStatus, AlertInfo, CashAdjustment, CashAdjustmentType, MenuItem as MenuItemType, Category as CategoryType } from '../types'; 
-import Modal from '../components/shared/Modal';
-import Alert from '../components/shared/Alert';
-import CashAdjustmentModal from '../components/shared/CashAdjustmentModal'; 
+import Modal from '@/components/shared/Modal';
+import Alert from '@/components/shared/Alert';
+import CashAdjustmentModal from '@/components/shared/CashAdjustmentModal'; 
 
 
 const OpenCashRegisterModal: React.FC<{

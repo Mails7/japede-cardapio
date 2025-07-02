@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Table } from '../../types';
-import { useAppContext } from '../../contexts/AppContext';
+import { useAppContext } from '@/contexts/AppContext';
 import Modal from './Modal';
 import { TicketIcon } from '../icons'; // Or another suitable icon for tables
 

@@ -1,8 +1,8 @@
 
 import React, { useState } from 'react';
-import { useAppContext } from '../../../contexts/AppContext';
-import Modal from '../../shared/Modal';
-import LoadingSpinner from '../../shared/LoadingSpinner';
+import { useAppContext } from '@/contexts/AppContext';
+import Modal from '@/shared/Modal';
+import LoadingSpinner from '@/shared/LoadingSpinner';
 
 interface LoginFormProps {
   onClose: () => void;

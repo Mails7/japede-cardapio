@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
-import { useAppContext } from '../../contexts/AppContext';
+import { useAppContext } from '@/contexts/AppContext';
 import { CustomerDetails } from '../../types'; // Corrected import
-import Modal from '../shared/Modal';
+import Modal from '@/shared/Modal';
 
 interface CustomerDetailsFormProps {
   onClose: () => void;

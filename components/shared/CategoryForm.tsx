@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Category } from '../../types';
-import { useAppContext } from '../../contexts/AppContext';
+import { useAppContext } from '@/contexts/AppContext';
 
 interface CategoryFormProps {
   category?: Category | null;

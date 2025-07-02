@@ -3,7 +3,7 @@ import React from 'react';
 import { Table, TableStatus, OrderStatus } from '../../types';
 import Modal from './Modal';
 import { PlusIcon, EyeIcon, CalendarIcon, XIcon, TrashIcon, CheckCircleIcon, BanIcon, DocumentTextIcon } from '../icons';
-import { useAppContext } from '../../contexts/AppContext'; // Import useAppContext
+import { useAppContext } from '@/contexts/AppContext'; // Import useAppContext
 
 interface TableActionModalProps {
   isOpen: boolean;

@@ -1,9 +1,9 @@
 
 import React from 'react';
-import { useAppContext } from '../../contexts/AppContext';
-import CustomerProductCard from '../../components/customer/CustomerProductCard';
+import { useAppContext } from '@/contexts/AppContext';
+import CustomerProductCard from '@/components/customer/CustomerProductCard';
 import { MenuItem } from '../../types';
-import { BookOpenIcon, ShoppingBagIcon } from '../../components/icons'; 
+import { BookOpenIcon, ShoppingBagIcon } from '@/components/icons'; 
 
 interface CustomerMenuPageProps {
   onCustomizePizza: (pizzaItem: MenuItem) => void;

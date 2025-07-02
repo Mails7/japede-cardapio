@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { useAppContext } from '../contexts/AppContext';
-import { ClockIcon, ShoppingCartIcon, CurrencyDollarIcon, BookOpenIcon, ChartBarIcon, FireIcon, IconProps } from '../components/icons'; 
+import { useAppContext } from '@/contexts/AppContext';
+import { ClockIcon, ShoppingCartIcon, CurrencyDollarIcon, BookOpenIcon, ChartBarIcon, FireIcon, IconProps } from '@/components/icons'; 
 import { OrderStatus, Order } from '../types';
 
 interface StatCardProps {

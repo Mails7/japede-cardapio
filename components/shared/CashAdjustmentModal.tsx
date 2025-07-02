@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { CashAdjustmentType } from '../../types';
-import { useAppContext } from '../../contexts/AppContext';
+import { useAppContext } from '@/contexts/AppContext';
 import Modal from './Modal';
 // FIX: Replaced MinusIcon with MinusCircleIcon as it was not exported.
 import { PlusIcon, MinusCircleIcon } from '../icons';

@@ -1,8 +1,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { Order, OrderItem, MenuItem } from '../types';
-import { useAppContext } from '../contexts/AppContext'; // To access menuItems for send_to_kitchen flag
-import LoadingSpinner from '../components/shared/LoadingSpinner';
+import { useAppContext } from '@/contexts/AppContext'; // To access menuItems for send_to_kitchen flag
+import LoadingSpinner from '@/components/shared/LoadingSpinner';
 
 interface PrintPageProps {
   orderId: string;

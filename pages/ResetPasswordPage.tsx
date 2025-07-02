@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
-import { useAppContext } from '../contexts/AppContext';
-import LoadingSpinner from '../components/shared/LoadingSpinner';
-import { KeyIcon, StorefrontIcon } from '../components/icons';
+import { useAppContext } from '@/contexts/AppContext';
+import LoadingSpinner from '@/components/shared/LoadingSpinner';
+import { KeyIcon, StorefrontIcon } from '@/components/icons';
 
 const ResetPasswordPage: React.FC = () => {
   const { updateUserPassword, authLoading, setAlert, settings } = useAppContext();

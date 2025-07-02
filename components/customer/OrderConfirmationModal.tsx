@@ -1,6 +1,6 @@
 
 import React from 'react';
-import Modal from '../shared/Modal';
+import Modal from '@/shared/Modal';
 import { CheckCircleIcon } from '../icons';
 
 interface OrderConfirmationModalProps {

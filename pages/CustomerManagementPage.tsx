@@ -1,12 +1,12 @@
 
 import React, { useState, useMemo, useEffect } from 'react';
-import { useAppContext } from '../contexts/AppContext';
-import { UserGroupIcon, PlusIcon, PencilAltIcon, TrashIcon, EyeIcon, SearchIcon, ShoppingCartIcon, ClipboardCopyIcon, UsersIcon as TotalUsersIcon } from '../components/icons';
+import { useAppContext } from '@/contexts/AppContext';
+import { UserGroupIcon, PlusIcon, PencilAltIcon, TrashIcon, EyeIcon, SearchIcon, ShoppingCartIcon, ClipboardCopyIcon, UsersIcon as TotalUsersIcon } from '@/components/icons';
 import { Profile, CustomerFormValues, AlertInfo as AppAlertInfo } from '../types'; 
-import CustomerViewModal from '../components/customer/CustomerViewModal'; 
-import CustomerEditModal from '../components/customer/CustomerEditModal'; 
-import Alert from '../components/shared/Alert'; 
-import LoadingSpinner from '../components/shared/LoadingSpinner';
+import CustomerViewModal from '@/components/customer/CustomerViewModal'; 
+import CustomerEditModal from '@/components/customer/CustomerEditModal'; 
+import Alert from '@/components/shared/Alert'; 
+import LoadingSpinner from '@/components/shared/LoadingSpinner';
 
 
 const CustomerManagementPage: React.FC = () => {

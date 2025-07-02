@@ -1,7 +1,7 @@
 
 
 import React, { createContext, useContext, useReducer, useEffect, ReactNode, useCallback, useRef, useMemo } from 'react';
-import { apiClient, handleApiError, setAuthToken, getAuthToken } from '../services/apiClient'; 
+import { apiClient, handleApiError, setAuthToken, getAuthToken } from '@/services/apiClient'; 
 import { 
     Category, MenuItem, Order, OrderStatus, AlertInfo, CartItem, CustomerDetails, 
     OrderItem, ManualOrderData, OrderType, PaymentMethod, Table, TableStatus, ReservationDetails,
@@ -13,7 +13,7 @@ import {
     Action, AppState, AuthSession, // Added Action, AppState, AuthSession
     PizzaSize, PizzaCrust // Added PizzaSize and PizzaCrust
 } from '../types';
-import { parseOpeningHours, isStoreOpen as checkIsStoreOpen } from '../utils/timeUtils'; // Added parseOpeningHours
+import { parseOpeningHours, isStoreOpen as checkIsStoreOpen } from '@/utils/timeUtils'; // Added parseOpeningHours
 import { GEMINI_API_ENDPOINT, generateId } from '../constants'; // For AI features if used by context and generateId
 
 // Helper to play sound - can be moved to a utils file

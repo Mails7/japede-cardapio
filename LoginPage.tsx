@@ -1,11 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
-import { useAppContext } from '../contexts/AppContext';
-import LoadingSpinner from '../components/shared/LoadingSpinner';
-import { KeyIcon, MailIcon, StorefrontIcon, GoogleIcon as GoogleIconSvg } from '../components/icons'; 
-import ForgotPasswordModal from '../components/auth/ForgotPasswordModal';
+import { useAppContext } from '@/contexts/AppContext';
+import LoadingSpinner from '@/components/shared/LoadingSpinner';
+import { KeyIcon, MailIcon, StorefrontIcon, GoogleIcon as GoogleIconSvg } from '@/components/icons'; 
+import ForgotPasswordModal from '@/components/auth/ForgotPasswordModal';
 // AdminRegisterModal import removed as it's no longer triggered from here for profiles.length === 0
-import SuperAdminCreationModal from '../components/auth/SuperAdminCreationModal'; // New modal
+import SuperAdminCreationModal from '@/components/auth/SuperAdminCreationModal'; // New modal
 
 const LoginPage: React.FC = () => {
   const { 

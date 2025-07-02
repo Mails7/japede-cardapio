@@ -1,16 +1,16 @@
 
 import React, { useState } from 'react';
-import { useAppContext } from '../contexts/AppContext';
+import { useAppContext } from '@/contexts/AppContext';
 import { Table, TableStatus, ReservationDetails, Order, OrderStatus } from '../types';
-import { TicketIcon, PlusIcon, PencilAltIcon, TrashIcon, EyeIcon, CalendarIcon, UsersIcon } from '../components/icons';
-import Modal from '../components/shared/Modal'; 
-import TableFormModal from '../components/shared/TableFormModal';
-import TableActionModal from '../components/shared/TableActionModal';
-import ReservationFormModal from '../components/shared/ReservationFormModal';
-import ManualOrderFormModal from '../components/shared/ManualOrderFormModal';
-import OrderDetailsModal from '../components/shared/OrderDetailsModal'; // Remains for non-table specific order viewing if needed elsewhere
-import ActiveTableOrderModal from '../components/shared/ActiveTableOrderModal'; // New Modal
-import Alert from '../components/shared/Alert';
+import { TicketIcon, PlusIcon, PencilAltIcon, TrashIcon, EyeIcon, CalendarIcon, UsersIcon } from '@/components/icons';
+import Modal from '@/components/shared/Modal'; 
+import TableFormModal from '@/components/shared/TableFormModal';
+import TableActionModal from '@/components/shared/TableActionModal';
+import ReservationFormModal from '@/components/shared/ReservationFormModal';
+import ManualOrderFormModal from '@/components/shared/ManualOrderFormModal';
+import OrderDetailsModal from '@/components/shared/OrderDetailsModal'; // Remains for non-table specific order viewing if needed elsewhere
+import ActiveTableOrderModal from '@/components/shared/ActiveTableOrderModal'; // New Modal
+import Alert from '@/components/shared/Alert';
 
 const TableManagementPage: React.FC = () => {
   const { tables, orders, addTable, updateTable, deleteTable, setAlert, alert, fetchOrderWithItems } = useAppContext();

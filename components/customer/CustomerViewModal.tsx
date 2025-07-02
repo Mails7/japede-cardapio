@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Profile } from '../../types'; 
-import Modal from '../shared/Modal'; 
+import Modal from '@/shared/Modal'; 
 import { UserCircleIcon, PhoneIcon, MailIcon, CalendarIcon, ShoppingCartIcon, CurrencyDollarIcon, LocationMarkerIcon, AnnotationIcon } from '../icons'; 
 
 interface CustomerViewModalProps {

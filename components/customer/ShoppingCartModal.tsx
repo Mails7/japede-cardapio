@@ -1,8 +1,8 @@
 
 import React from 'react';
-import { useAppContext } from '../../contexts/AppContext';
+import { useAppContext } from '@/contexts/AppContext';
 import ShoppingCartItem from './ShoppingCartItem';
-import Modal from '../shared/Modal'; // Reusing the admin modal for now
+import Modal from '@/shared/Modal'; // Reusing the admin modal for now
 import { ShoppingCartIcon, XIcon } from '../icons';
 
 interface ShoppingCartModalProps {

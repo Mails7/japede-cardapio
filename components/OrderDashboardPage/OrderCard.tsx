@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { Order, OrderStatus, OrderType } from '../../types';
 import { EyeIcon, ClockIcon, PauseIcon, PlayIcon, TableIcon, TruckIcon } from '../icons';
-import ProgressBar from '../shared/ProgressBar';
-import { getStatusColor, formatTimeRemaining } from '../../utils/orderUtils'; // Assuming these utils exist or are created
+import ProgressBar from '@/shared/ProgressBar';
+import { getStatusColor, formatTimeRemaining } from '@/utils/orderUtils'; // Assuming these utils exist or are created
 
 interface OrderCardProps {
   order: Order;

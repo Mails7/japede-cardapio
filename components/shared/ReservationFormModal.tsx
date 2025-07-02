@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Table, ReservationDetails } from '../../types';
 import Modal from './Modal';
 import { CalendarIcon, UsersIcon, DocumentTextIcon } from '../icons';
-import { useAppContext } from '../../contexts/AppContext'; // Import useAppContext for alerts
+import { useAppContext } from '@/contexts/AppContext'; // Import useAppContext for alerts
 
 interface ReservationFormModalProps {
   isOpen: boolean;

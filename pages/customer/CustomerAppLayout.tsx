@@ -1,14 +1,14 @@
 
 import React, { useState, useEffect } from 'react';
-import { useAppContext } from '../../contexts/AppContext';
+import { useAppContext } from '@/contexts/AppContext';
 import CustomerMenuPage from './CustomerMenuPage';
-import ShoppingCartModal from '../../components/customer/ShoppingCartModal';
-import CustomerDetailsForm from '../../components/customer/CustomerDetailsForm';
-import OrderConfirmationModal from '../../components/customer/OrderConfirmationModal';
-import PizzaCustomizationModal from '../../components/customer/PizzaCustomizationModal';
+import ShoppingCartModal from '@/components/customer/ShoppingCartModal';
+import CustomerDetailsForm from '@/components/customer/CustomerDetailsForm';
+import OrderConfirmationModal from '@/components/customer/OrderConfirmationModal';
+import PizzaCustomizationModal from '@/components/customer/PizzaCustomizationModal';
 import { MenuItem, Order } from '../../types';
-import { ShoppingCartIcon, CheckCircleIcon, XCircleIcon } from '../../components/icons'; 
-import LoadingSpinner from '../../components/shared/LoadingSpinner';
+import { ShoppingCartIcon, CheckCircleIcon, XCircleIcon } from '@/components/icons'; 
+import LoadingSpinner from '@/components/shared/LoadingSpinner';
 
 type CustomerStep = 'menu' | 'cart' | 'details' | 'confirmation' | 'customizePizza';
 

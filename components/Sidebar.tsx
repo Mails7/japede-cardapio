@@ -11,7 +11,7 @@ import {
   CurrencyDollarIcon, 
   CogIcon,
 } from './icons'; 
-import { useAppContext } from '../contexts/AppContext';
+import { useAppContext } from '@/contexts/AppContext';
 
 interface SidebarProps {
   currentView: View;

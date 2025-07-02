@@ -1,12 +1,12 @@
 
 import React, { useState } from 'react';
-import { useAppContext } from '../contexts/AppContext';
+import { useAppContext } from '@/contexts/AppContext';
 import { Category, MenuItem } from '../types';
-import Modal from '../components/shared/Modal';
-import MenuItemForm from '../components/shared/MenuItemForm';
-import CategoryForm from '../components/shared/CategoryForm';
-import { PlusIcon, PencilAltIcon, TrashIcon, EyeIcon, EyeOffIcon, LinkIcon, ClipboardCopyIcon, DuplicateIcon } from '../components/icons';
-import Alert from '../components/shared/Alert';
+import Modal from '@/components/shared/Modal';
+import MenuItemForm from '@/components/shared/MenuItemForm';
+import CategoryForm from '@/components/shared/CategoryForm';
+import { PlusIcon, PencilAltIcon, TrashIcon, EyeIcon, EyeOffIcon, LinkIcon, ClipboardCopyIcon, DuplicateIcon } from '@/components/icons';
+import Alert from '@/components/shared/Alert';
 
 const MenuManagementPage: React.FC = () => {
   const { 

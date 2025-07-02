@@ -1,11 +1,11 @@
 
 
 import React, { useState, useEffect, FormEvent, useRef } from 'react';
-import { CogIcon, StorefrontIcon, ChatAltIcon, CreditCardIcon, KeyIcon, BellIcon as NotificationBellIcon, SaveIcon, PlusIcon, TrashIcon, ClockIcon, LinkIcon, EyeIcon as ShowKeyIcon, EyeOffIcon as HideKeyIcon, ClipboardCopyIcon, PlayIcon as FlowIcon } from '../components/icons';
+import { CogIcon, StorefrontIcon, ChatAltIcon, CreditCardIcon, KeyIcon, BellIcon as NotificationBellIcon, SaveIcon, PlusIcon, TrashIcon, ClockIcon, LinkIcon, EyeIcon as ShowKeyIcon, EyeOffIcon as HideKeyIcon, ClipboardCopyIcon, PlayIcon as FlowIcon } from '@/components/icons';
 // Removed useSettingsContext, defaultAppSettings etc. as they are now managed by AppContext
 import { AppSettings, StoreSettings, PaymentSettings, OpeningHoursEntry, DeliveryFeeType, WhatsAppSettings, NotificationSettings, OpeningHours, OrderType, OrderStatus, OrderFlowDurations, defaultAppSettings, PredefinedSound } from '../types';
-import LoadingSpinner from '../components/shared/LoadingSpinner';
-import { useAppContext } from '../contexts/AppContext'; // Changed to useAppContext
+import LoadingSpinner from '@/components/shared/LoadingSpinner';
+import { useAppContext } from '@/contexts/AppContext'; // Changed to useAppContext
 
 type SettingsTab = 'store' | 'payments' | 'order_flow' | 'whatsapp' | 'notifications' | 'integrations' | 'security'; // Added 'order_flow'
 const DAYS_OF_WEEK: (keyof OpeningHours)[] = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];

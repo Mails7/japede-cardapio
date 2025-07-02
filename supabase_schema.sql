@@ -219,3 +219,4 @@ COMMENT ON TABLE cash_adjustments IS 'Ajustes de caixa (sangria, reforço, etc.)
 COMMENT ON TABLE orders IS 'Pedidos dos clientes';
 COMMENT ON TABLE order_items IS 'Itens individuais de cada pedido';
 COMMENT ON TABLE system_settings IS 'Configurações gerais do sistema';
+

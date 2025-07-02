@@ -1,9 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { Profile, CustomerFormValues } from '../../types'; 
-import Modal from '../shared/Modal';
+import Modal from '@/shared/Modal';
 import { UserCircleIcon, PhoneIcon, MailIcon, LocationMarkerIcon, AnnotationIcon } from '../icons'; 
-import { useAppContext } from '../../contexts/AppContext'; // Import useAppContext
+import { useAppContext } from '@/contexts/AppContext'; // Import useAppContext
 
 interface CustomerEditModalProps {
   initialCustomer: Profile | null; 

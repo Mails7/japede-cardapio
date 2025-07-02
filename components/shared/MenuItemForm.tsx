@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { MenuItem, Category, PizzaSize, PizzaCrust } from '../../types';
-import { useAppContext } from '../../contexts/AppContext';
-import { generateDescription as fetchGeneratedDescription } from '../../services/geminiService';
+import { useAppContext } from '@/contexts/AppContext';
+import { generateDescription as fetchGeneratedDescription } from '@/services/geminiService';
 import LoadingSpinner from './LoadingSpinner';
 import { SparklesIcon, PlusIcon, TrashIcon } from '../icons';
 import { generateId } from '../../constants';

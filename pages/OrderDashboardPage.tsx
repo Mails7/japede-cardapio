@@ -1,12 +1,12 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
-import { useAppContext } from '../contexts/AppContext';
+import { useAppContext } from '@/contexts/AppContext';
 import { Order, OrderStatus, OrderType, CashRegisterSessionStatus } from '../types'; 
-import OrderDetailsModal from '../components/shared/OrderDetailsModal';
-import ManualOrderFormModal from '../components/shared/ManualOrderFormModal';
-import { ArrowsExpandIcon, XIcon, PlusIcon, RefreshIcon, EyeIcon } from '../components/icons';
-import Alert from '../components/shared/Alert';
-import OrderCardComponent from '../components/OrderDashboardPage/OrderCard'; 
+import OrderDetailsModal from '@/components/shared/OrderDetailsModal';
+import ManualOrderFormModal from '@/components/shared/ManualOrderFormModal';
+import { ArrowsExpandIcon, XIcon, PlusIcon, RefreshIcon, EyeIcon } from '@/components/icons';
+import Alert from '@/components/shared/Alert';
+import OrderCardComponent from '@/components/OrderDashboardPage/OrderCard'; 
 import { ORDER_STATUS_ICONS, ORDER_STATUS_COLUMN_TITLES } from '../constants';
 
 

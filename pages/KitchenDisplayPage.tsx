@@ -1,9 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
-import { useAppContext } from '../contexts/AppContext';
+import { useAppContext } from '@/contexts/AppContext';
 import { Order, OrderStatus, OrderItem, MenuItem } from '../types';
-import { FireIcon, CheckCircleIcon, ClockIcon, PlayIcon, PauseIcon, RefreshIcon } from '../components/icons';
-import ProgressBar from '../components/shared/ProgressBar';
+import { FireIcon, CheckCircleIcon, ClockIcon, PlayIcon, PauseIcon, RefreshIcon } from '@/components/icons';
+import ProgressBar from '@/components/shared/ProgressBar';
 // Removed unused import: import { ORDER_STATUS_DURATIONS } from '../constants';
 
 

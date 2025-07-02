@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
 import { MenuItem, PizzaSize, PizzaCrust, CartItem } from '../../types';
-import { useAppContext } from '../../contexts/AppContext';
-import Modal from '../shared/Modal';
+import { useAppContext } from '@/contexts/AppContext';
+import Modal from '@/shared/Modal';
 import { generateId, DEFAULT_PIZZA_IMAGE } from '../../constants';
 import { PlusIcon, CheckCircleIcon, XIcon as QuantityMinusIcon, PlusIcon as QuantityPlusIcon } from '../icons'; // Changed MinusIcon to XIcon
 

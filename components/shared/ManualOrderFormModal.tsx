@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
 import { MenuItem, ManualOrderItem, ManualOrderData, OrderType, PaymentMethod, PizzaSize, PizzaCrust, Table } from '../../types';
-import { useAppContext } from '../../contexts/AppContext';
+import { useAppContext } from '@/contexts/AppContext';
 import Modal from './Modal';
 import { PlusIcon, TrashIcon } from '../icons'; 
 import { generateId, ORDER_TYPES, PAYMENT_METHODS, DEFAULT_PIZZA_IMAGE } from '../../constants';

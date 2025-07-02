@@ -1,10 +1,10 @@
 
 import React, { useState, useEffect } from 'react';
-import { useAppContext } from '../contexts/AppContext';
-import LoadingSpinner from '../components/shared/LoadingSpinner';
-import { KeyIcon, MailIcon, GoogleIcon as GoogleIconSvg } from '../components/icons';
-import ForgotPasswordModal from '../components/auth/ForgotPasswordModal';
-import SuperAdminCreationModal from '../components/auth/SuperAdminCreationModal';
+import { useAppContext } from '@/contexts/AppContext';
+import LoadingSpinner from '@/components/shared/LoadingSpinner';
+import { KeyIcon, MailIcon, GoogleIcon as GoogleIconSvg } from '@/components/icons';
+import ForgotPasswordModal from '@/components/auth/ForgotPasswordModal';
+import SuperAdminCreationModal from '@/components/auth/SuperAdminCreationModal';
 
 // --- Internal Components for Structure and Clarity ---
 

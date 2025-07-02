@@ -2,7 +2,7 @@
 import React from 'react';
 import { View } from '../App'; 
 import { BellIcon, CogIcon } from './icons'; 
-import { useAppContext } from '../contexts/AppContext'; 
+import { useAppContext } from '@/contexts/AppContext'; 
 
 interface HeaderProps {
   setCurrentView: (view: View) => void; 
