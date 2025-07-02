@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react';
-import { useAppContext } from '@/contexts/AppContext';
-import Modal from '@/shared/Modal';
-import LoadingSpinner from '@/shared/LoadingSpinner';
-import { MailIcon } from '../icons';
+import { useAppContext } from '@contexts/AppContext';
+import Modal from '@components/shared/Modal';
+import LoadingSpinner from '@components/shared/LoadingSpinner';
+import { MailIcon } from '@components/icons';
 
 interface ForgotPasswordModalProps {
   onClose: () => void;

@@ -6,6 +6,7 @@
     "module": "ESNext",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
+    "baseUrl": ".",
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -15,15 +16,43 @@
     "noEmit": true,
     "allowJs": true,
     "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
 
-    /* Linting */
+    /* Type checking */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
 
+    /* Paths */
     "paths": {
-      "@/*" :  ["./*"]
-    }
-  }
+      "@/*": ["./*"],
+      "@components/*": ["./components/*"],
+      "@pages/*": ["./pages/*"],
+      "@contexts/*": ["./contexts/*"],
+      "@services/*": ["./services/*"],
+      "@utils/*": ["./utils/*"],
+      "@types": ["./types"]
+    },
+
+    /* Include */
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+    ]
+  },
+  "include": [
+    "src",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build"
+  ]
 }

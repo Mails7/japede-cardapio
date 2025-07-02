@@ -1,22 +1,22 @@
 
 import React, { useState, useEffect } from 'react';
-import Header from './components/Header';
-import Sidebar from './components/Sidebar';
-import MenuManagementPage from './pages/MenuManagementPage';
-import OrderDashboardPage from './pages/OrderDashboardPage';
-import DashboardPage from './pages/DashboardPage';
-import KitchenDisplayPage from './pages/KitchenDisplayPage';
-import TableManagementPage from './pages/TableManagementPage';
-import CustomerManagementPage from './pages/CustomerManagementPage'; 
-import FinancialsPage from './pages/FinancialsPage';
-import SettingsPage from './pages/SettingsPage';
-import CustomerAppLayout from './pages/customer/CustomerAppLayout';
-import { useAppContext } from './contexts/AppContext';
-import Alert from './components/shared/Alert';
-import LoadingSpinner from './components/shared/LoadingSpinner';
-import PrintPage from './pages/PrintPage'; 
-import LoginPage from './pages/LoginPage'; 
-import ResetPasswordPage from './pages/ResetPasswordPage';
+import Header from '@components/Header';
+import Sidebar from '@components/Sidebar';
+import MenuManagementPage from '@pages/MenuManagementPage';
+import OrderDashboardPage from '@pages/OrderDashboardPage';
+import DashboardPage from '@pages/DashboardPage';
+import KitchenDisplayPage from '@pages/KitchenDisplayPage';
+import TableManagementPage from '@pages/TableManagementPage';
+import CustomerManagementPage from '@pages/CustomerManagementPage'; 
+import FinancialsPage from '@pages/FinancialsPage';
+import SettingsPage from '@pages/SettingsPage';
+import CustomerAppLayout from '@pages/customer/CustomerAppLayout';
+import { useAppContext } from '@contexts/AppContext';
+import Alert from '@components/shared/Alert';
+import LoadingSpinner from '@components/shared/LoadingSpinner';
+import PrintPage from '@pages/PrintPage'; 
+import LoginPage from '@pages/LoginPage'; 
+import ResetPasswordPage from '@pages/ResetPasswordPage';
 
 
 export type View = 
