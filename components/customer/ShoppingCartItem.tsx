@@ -1,68 +1,59 @@
-
 import React from 'react';
-import { CartItem } from '../../types';
-import { PlusIcon, TrashIcon, XIcon as MinusIcon } from '../icons'; 
-import { DEFAULT_PIZZA_IMAGE } from '../../constants';
+import { ShoppingCartItem as CartItem } from '../../types';
+import { MinusCircleIcon, PlusCircleIcon, TrashIcon } from '../icons';
 
 interface ShoppingCartItemProps {
   item: CartItem;
   onRemove: () => void;
-  onUpdateQuantity: (newQuantity: number) => void;
+  onUpdateQuantity: (quantity: number) => void;
 }
 
 const ShoppingCartItem: React.FC<ShoppingCartItemProps> = ({ item, onRemove, onUpdateQuantity }) => {
-  const increment = () => onUpdateQuantity(item.quantity + 1);
-  const decrement = () => {
+  const handleDecrement = () => {
     if (item.quantity > 1) {
       onUpdateQuantity(item.quantity - 1);
-    } else {
-      onRemove(); 
     }
   };
 
+  const handleIncrement = () => {
+    onUpdateQuantity(item.quantity + 1);
+  };
+
   return (
-    <div className="flex items-start sm:items-center space-x-3 p-3 bg-white rounded-lg shadow-sm border border-gray-200">
-      <img 
-        src={item.imageUrl || (item.itemType === 'pizza' ? DEFAULT_PIZZA_IMAGE : `https://picsum.photos/seed/${item.menuItemId}/100/100`)} 
-        alt={item.name} 
-        className="w-16 h-16 sm:w-20 sm:h-20 rounded-md object-cover flex-shrink-0"
-        onError={(e) => (e.currentTarget.src = item.itemType === 'pizza' ? DEFAULT_PIZZA_IMAGE : 'https://picsum.photos/seed/placeholder_cart/100/100')}
-      />
-      <div className="flex-grow min-w-0"> {/* Added min-w-0 for better truncation */}
-        <h5 className="text-sm sm:text-base font-semibold text-gray-800 truncate" title={item.name}>
-          {item.name}
-        </h5>
-        <p className="text-xs sm:text-sm text-primary font-medium">
-            R$ {item.price.toFixed(2).replace('.', ',')} (unid.)
-        </p>
-        <div className="flex items-center mt-1 sm:mt-2">
-          <button 
-            onClick={decrement} 
-            className="p-1 text-gray-600 hover:text-red-500 rounded-full hover:bg-gray-100 transition-colors"
-            aria-label="Diminuir quantidade"
-          >
-            {item.quantity > 1 ? <MinusIcon className="w-4 h-4" /> : <TrashIcon className="w-4 h-4 text-red-500"/>}
-          </button>
-          <span className="mx-2 text-sm sm:text-base font-medium w-6 text-center">{item.quantity}</span>
-          <button 
-            onClick={increment} 
-            className="p-1 text-gray-600 hover:text-green-500 rounded-full hover:bg-gray-100 transition-colors"
-            aria-label="Aumentar quantidade"
-          >
-            <PlusIcon className="w-4 h-4" />
-          </button>
+    <div className="flex items-center justify-between bg-white px-4 py-3 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-150 ease-in-out">
+      <div className="flex items-center space-x-4">
+        <img
+          src={item.image || '/placeholder-product.png'}
+          alt={item.name}
+          className="w-16 h-16 object-cover rounded-lg border border-gray-200"
+        />
+        <div>
+          <h4 className="text-sm font-medium text-gray-800">{item.name}</h4>
+          <p className="text-xs text-gray-500">R$ {item.price.toFixed(2).replace('.', ',')}</p>
         </div>
       </div>
-      <div className="text-right flex-shrink-0 ml-auto pl-2">
-        <p className="text-sm sm:text-base font-semibold text-gray-800">
-          R$ {(item.price * item.quantity).toFixed(2).replace('.', ',')}
-        </p>
-        <button 
-            onClick={onRemove} // This already calls the onRemove passed from ShoppingCartModal which should use item.id
-            className="text-xs text-red-500 hover:text-red-700 hover:underline mt-1"
-            aria-label="Remover item"
+      <div className="flex items-center space-x-3">
+        <button
+          onClick={handleDecrement}
+          className="text-gray-500 hover:text-primary focus:outline-none"
+          title="Diminuir quantidade"
         >
-            Remover
+          <MinusCircleIcon className="w-5 h-5" />
+        </button>
+        <span className="text-sm font-medium text-gray-700">{item.quantity}</span>
+        <button
+          onClick={handleIncrement}
+          className="text-gray-500 hover:text-primary focus:outline-none"
+          title="Aumentar quantidade"
+        >
+          <PlusCircleIcon className="w-5 h-5" />
+        </button>
+        <button
+          onClick={onRemove}
+          className="text-red-500 hover:text-red-700 focus:outline-none"
+          title="Remover item"
+        >
+          <TrashIcon className="w-5 h-5" />
         </button>
       </div>
     </div>
