@@ -1,19 +1,18 @@
-
 import React, { useState, useEffect } from 'react';
 import { useAppContext } from '@/contexts/AppContext';
-import { CustomerDetails } from '../../types'; // Corrected import
+import { CustomerDetails } from '../../types';
 import Modal from '@/shared/Modal';
 
 interface CustomerDetailsFormProps {
   onClose: () => void;
-  onSubmit: () => void; 
+  onSubmit: () => void;
 }
 
 const CustomerDetailsForm: React.FC<CustomerDetailsFormProps> = ({ onClose, onSubmit }) => {
-  const { 
-    customerDetails: initialCustomerDetails, 
-    setCustomerDetails, 
-    cart, 
+  const {
+    customerDetails: initialCustomerDetails,
+    setCustomerDetails,
+    cart,
     setAlert,
   } = useAppContext();
 
@@ -34,34 +33,34 @@ const CustomerDetailsForm: React.FC<CustomerDetailsFormProps> = ({ onClose, onSu
       setAddressReference(initialCustomerDetails.addressReference || '');
       setNotes(initialCustomerDetails.notes || '');
     } else {
-        console.log("[CustomerDetailsForm] No prefill data found. Starting with empty fields.");
-        setName('');
-        setPhone('');
-        setAddress('');
-        setAddressReference('');
-        setNotes('');
+      console.log("[CustomerDetailsForm] No prefill data found. Starting with empty fields.");
+      setName('');
+      setPhone('');
+      setAddress('');
+      setAddressReference('');
+      setNotes('');
     }
   }, [initialCustomerDetails]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !phone.trim() || !address.trim()) {
-      setAlert({message: 'Por favor, preencha seu nome, telefone e endereço.', type: 'error'});
+      setAlert({ message: 'Por favor, preencha seu nome, telefone e endereço.', type: 'error' });
       return;
     }
-    
+
     const phonePatternString = "^\\(?\\d{2}\\)?\\s?\\d{4,5}-?\\d{4}$";
     const phoneRegex = new RegExp(phonePatternString);
 
     if (!phoneRegex.test(phone)) {
-       setAlert({message: 'Por favor, insira um telefone válido (ex: (XX) XXXXX-XXXX).', type: 'error'});
-       return;
+      setAlert({ message: 'Por favor, insira um telefone válido (ex: (XX) XXXXX-XXXX).', type: 'error' });
+      return;
     }
 
     const currentDetails: CustomerDetails = { name, phone, address, addressReference, notes };
-    setCustomerDetails(currentDetails); 
-    
-    onSubmit(); 
+    setCustomerDetails(currentDetails);
+
+    onSubmit();
   };
 
   return (
@@ -137,20 +136,20 @@ const CustomerDetailsForm: React.FC<CustomerDetailsFormProps> = ({ onClose, onSu
             <span>Total do Pedido:</span>
             <span>R$ {totalAmount.toFixed(2).replace('.', ',')}</span>
           </div>
-           <p className="text-xs text-gray-500 mt-1">Taxa de entrega será confirmada pelo estabelecimento.</p>
+          <p className="text-xs text-gray-500 mt-1">Taxa de entrega será confirmada pelo estabelecimento.</p>
         </div>
 
         <div className="flex justify-end space-x-3 pt-3">
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 transition-colors"
+            className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
           >
             Voltar ao Carrinho
           </button>
           <button
             type="submit"
-            className="px-6 py-3 text-base font-semibold text-white bg-green-500 hover:bg-green-600 border border-transparent rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600 transition-colors"
+            className="px-6 py-3 text-base font-semibold text-white bg-green-500 hover:bg-green-600 border border-transparent rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
           >
             Confirmar e Enviar Pedido
           </button>
