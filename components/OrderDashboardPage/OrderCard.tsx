@@ -1,9 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 import { Order, OrderStatus, OrderType } from '../../types';
 import { EyeIcon, ClockIcon, PauseIcon, PlayIcon, TableIcon, TruckIcon } from '../icons';
 import ProgressBar from '@/shared/ProgressBar';
-import { getStatusColor, formatTimeRemaining } from '@/utils/orderUtils'; // Assuming these utils exist or are created
+import { getStatusColor, formatTimeRemaining } from '@/utils/orderUtils';
 
 interface OrderCardProps {
   order: Order;
@@ -48,7 +47,7 @@ const OrderCardComponent: React.FC<OrderCardProps> = ({ order, onOpenDetails, on
   };
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-150 ease-in-out"> {/* mb-4 removed */}
+    <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-150 ease-in-out">
       <div className="flex justify-between items-start">
         <div>
           <h4 className="text-lg font-semibold text-gray-800 flex items-center">
@@ -67,15 +66,13 @@ const OrderCardComponent: React.FC<OrderCardProps> = ({ order, onOpenDetails, on
             <button
               onClick={() => onToggleAutoProgress(order.id)}
               className="mt-1 p-0.5 rounded-full hover:bg-gray-200"
-              title={order.auto_progress ? "Pausar Progresso Automático" : "Ativar Progresso Automático"}
-            >
+              title={order.auto_progress ? "Pausar Progresso Automático" : "Ativar Progresso Automático"}>
               {order.auto_progress ? <PauseIcon className="w-4 h-4 text-gray-600" /> : <PlayIcon className="w-4 h-4 text-green-600" />}
             </button>
           )}
         </div>
       </div>
       <p className="text-gray-700 font-bold my-2">Total: R$ {order.total_amount.toFixed(2)}</p>
-
       {showProgressBar && (
         <div className="my-2">
           <ProgressBar percent={progressPercent} />
@@ -85,20 +82,17 @@ const OrderCardComponent: React.FC<OrderCardProps> = ({ order, onOpenDetails, on
       {!order.auto_progress && order.status !== OrderStatus.DELIVERED && order.status !== OrderStatus.CANCELLED && (
         <p className="text-xs text-gray-400 italic my-1">Progresso automático desativado.</p>
       )}
-
       <div className="mt-3 flex justify-between items-center text-sm">
         <button
           onClick={() => onOpenDetails(order)}
-          className="text-primary hover:text-primary-dark font-medium flex items-center"
-        >
+          className="text-primary hover:text-primary-dark font-medium flex items-center">
           <EyeIcon className="w-4 h-4 mr-1" /> Ver Detalhes
         </button>
         <select
           value={order.status}
           onChange={(e) => onUpdateStatus(order.id, e.target.value as OrderStatus, true)}
           className="border border-gray-300 rounded-md p-1 text-xs focus:ring-primary focus:border-primary"
-          disabled={order.status === OrderStatus.DELIVERED || order.status === OrderStatus.CANCELLED}
-        >
+          disabled={order.status === OrderStatus.DELIVERED || order.status === OrderStatus.CANCELLED}>
           {Object.values(OrderStatus).map(status => (
             <option key={status} value={status}>{status}</option>
           ))}
